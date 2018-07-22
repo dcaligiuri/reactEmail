@@ -22,7 +22,6 @@ class Email extends Component {
           <Col xs={2}>
            <EmailRight />
           </Col>
-          <hr/>
         </Row>
       </Grid>
     );

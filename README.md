@@ -31,6 +31,8 @@ npm run client
 
 ### Author
 
+Project Started from React/Express Starter Pack, originally created by...
+
 Brad Traversy
 [Traversy Media](http://www.traversymedia.com)
 

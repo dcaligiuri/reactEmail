@@ -1,9 +1,0 @@
-h2{ 
-  background-color: blue;
-  margin-top: 0px;
-  padding-bottom: 30px;
-  color: white;
-  display: flex;
-  justify-content: center; /* align horizontal */
-  align-items: center; /* align vertical */
-}

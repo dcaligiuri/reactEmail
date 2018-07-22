@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-
+import classes from './EmailLeft';
 
 class EmailLeft extends Component {
 
