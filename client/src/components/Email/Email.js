@@ -8,14 +8,22 @@ import EmailRight from './EmailRight/EmailRight';
 
 class Email extends Component {
 
-  youHaveCLICKED(){
-    console.log("HELO");
+  readEmail = (emailId, event) => {
+
+
+    fetch('/api/read/' + emailId, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    })
   }
 
   render() {
     return (
         <Grid>
-        <Row onClick={this.youHaveCLICKED} className="show-grid">
+        <Row onClick={() => this.readEmail(this.props.id)} className="show-grid">
           <Col xs={2}>
            <EmailLeft 
             proPic={this.props.proPic}/>

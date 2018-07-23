@@ -12,8 +12,22 @@ class EmailRight extends Component {
   }
 
   starUnstar(starStatus, emailId){
-    console.log(emailId);
+
     this.setState({starred: !starStatus});
+    
+    fetch('/api/star/' + emailId, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'starred': !starStatus
+      },
+      body: {
+        'starred': !starStatus
+      }
+
+    })
+
   }
   
   render() {
