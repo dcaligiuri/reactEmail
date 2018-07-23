@@ -1,4 +1,16 @@
-.SideDrawer {
+.ComposeBtn {
+    background-color: blue;
+    color: white;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px; 
+    padding: 12px;
+    outline:none;
+}
+
+
+.ComposeEmail {
     position: fixed;
     width: 280px;
     max-width: 70%;
@@ -14,7 +26,7 @@
 
 
 @media (min-width: 500px){
-    .SideDrawer{
+    .ComposeEmail{
         display: none;
     }
 }

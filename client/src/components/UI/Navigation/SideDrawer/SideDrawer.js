@@ -1,4 +1,3 @@
-
 import React from 'react';
 import classes from './SideDrawer.css';
 import Backdrop from '../../../UI/Backdrop/Backdrop';

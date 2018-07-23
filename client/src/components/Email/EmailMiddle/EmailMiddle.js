@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import classes from './EmailMiddle.css';
 
 
 class EmailMiddle extends Component {
@@ -8,9 +9,9 @@ class EmailMiddle extends Component {
   render() {
     return (
       <div>
-            <p>Quora</p>
-            <p>Can you answer this question:"...</p>
-            <p>Quora Can you answer this question...</p>
+            <p>{this.props.sender}</p>
+            <p>{this.props.subject}</p>
+            <p>{this.props.body}</p>
       </div>
 
     );

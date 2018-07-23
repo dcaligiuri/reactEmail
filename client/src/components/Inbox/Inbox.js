@@ -5,16 +5,24 @@ import Email from '../Email/Email';
 
 class Inbox extends Component {
 
+  state = {
+    emails: null
+  }
+
+  componentDidMount() {
+    fetch('/api/inbox')
+      .then(res => res.json())
+      .then(emails => this.setState({emails}, () => console.log('Emails fetched...', emails)));
+  }
+
 
   render() {
     return (
       <div>
-        <Email />
-        <Email />
-        <Email />
-        <Email />
-        <Email />
-        <Email />
+        {this.state.emails ? this.state.emails.map( 
+          em => <Email key={em.id} sender={em.sender} 
+                       subject={em.subject} 
+                       body={em.body}/> )  : null } 
       </div>
     );
   }

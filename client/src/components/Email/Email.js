@@ -16,10 +16,13 @@ class Email extends Component {
           <Col xs={2}>
            <EmailLeft />
           </Col>
-          <Col xs={8} >
-            <EmailMiddle />
+          <Col xs={7} >
+            <EmailMiddle
+              sender={this.props.sender} 
+              subject={this.props.subject}
+              body={this.props.body}/>
           </Col>
-          <Col xs={2}>
+          <Col xs={3}>
            <EmailRight />
           </Col>
         </Row>
