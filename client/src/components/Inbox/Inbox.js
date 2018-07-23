@@ -22,7 +22,8 @@ class Inbox extends Component {
         {this.state.emails ? this.state.emails.map( 
           em => <Email key={em.id} sender={em.sender} 
                        subject={em.subject} 
-                       body={em.body}/> )  : null } 
+                       body={em.body}
+                       starred={em.starred}/> )  : null } 
       </div>
     );
   }

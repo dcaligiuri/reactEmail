@@ -23,7 +23,8 @@ class Email extends Component {
               body={this.props.body}/>
           </Col>
           <Col xs={3}>
-           <EmailRight />
+           <EmailRight 
+              starred={this.props.starred}/>
           </Col>
         </Row>
       </Grid>
