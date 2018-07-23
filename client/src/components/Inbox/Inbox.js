@@ -20,10 +20,14 @@ class Inbox extends Component {
     return (
       <div>
         {this.state.emails ? this.state.emails.map( 
-          em => <Email key={em.id} sender={em.sender} 
+          em => <Email key={em._id} sender={em.sender} 
                        subject={em.subject} 
                        body={em.body}
-                       starred={em.starred}/> )  : null } 
+                       starred={em.starred}
+                       dateSent={em.dateSent}
+                       read={em.read}
+                       proPic={em.profilePic}
+                       id={em._id}/> )  : null } 
       </div>
     );
   }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 //import classes from './App.css';
 import Mailbox from './containers/Mailbox/Mailbox';
-import Backdrop from '../src/components/UI/Backdrop/Backdrop';
-import SideDrawer from '../src/components/UI/Navigation/SideDrawer/SideDrawer';
-import ComposeBtn from '../src/components/UI/Navigation/ComposeBtn/ComposeBtn';
+import Backdrop from './components/UI/Backdrop/Backdrop';
+import SideDrawer from './components/UI/Navigation/SideDrawer/SideDrawer';
+import ComposeBtn from './components/UI/Navigation/ComposeBtn/ComposeBtn';
 import { Route, Switch, BrowserRouter} from 'react-router-dom';
-import ComposeEmail from '../src/components/ComposeEmail/ComposeEmail';
+import ComposeEmail from './components/ComposeEmail/ComposeEmail';
 
 class App extends Component {
   state = {

@@ -1,0 +1,15 @@
+.Ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 20px;
+}
+
+.Line {
+    margin-top: -10px;
+}
+
+.Bold { 
+    font-weight: bold;
+}
+

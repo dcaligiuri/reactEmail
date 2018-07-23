@@ -1,5 +1,5 @@
 .InboxHeader { 
-    margin-top: 8px;
+    margin: 8px;
     color: white;
     text-align: center;
 }
@@ -13,5 +13,6 @@
 
 
 .InboxBackground {
-  background-color: blue;
+  background-color: #db3236;
+  height: 45px;
 }

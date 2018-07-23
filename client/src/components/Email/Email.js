@@ -8,25 +8,34 @@ import EmailRight from './EmailRight/EmailRight';
 
 class Email extends Component {
 
+  youHaveCLICKED(){
+    console.log("HELO");
+  }
 
   render() {
     return (
         <Grid>
-        <Row className="show-grid">
+        <Row onClick={this.youHaveCLICKED} className="show-grid">
           <Col xs={2}>
-           <EmailLeft />
+           <EmailLeft 
+            proPic={this.props.proPic}/>
           </Col>
-          <Col xs={7} >
+          <Col xs={8} >
             <EmailMiddle
+              read={this.props.read}
               sender={this.props.sender} 
               subject={this.props.subject}
               body={this.props.body}/>
           </Col>
-          <Col xs={3}>
+          <Col xs={2}>
            <EmailRight 
-              starred={this.props.starred}/>
+              id={this.props.id}
+              dateSent={this.props.dateSent}
+              starred={this.props.starred}
+              read={this.props.read}/>
           </Col>
         </Row>
+        <hr/>
       </Grid>
     );
   }
