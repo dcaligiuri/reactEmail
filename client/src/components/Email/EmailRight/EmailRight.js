@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import classes from './EmailRight.css';
 
 class EmailRight extends Component {
 
@@ -48,7 +49,7 @@ class EmailRight extends Component {
     
     return (
       <div style={{textAlign: 'right'}}>
-        <p style={dateStyling}>{this.props.dateSent}</p>
+        <p className={classes.EmailDate} style={dateStyling}>{this.props.dateSent}</p>
         <p onClick={() => this.starUnstar(this.state.starred, this.props.id)}>{star}</p>
       </div>
     );

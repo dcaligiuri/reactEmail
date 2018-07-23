@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 //import classes from './App.css';
 import Mailbox from './containers/Mailbox/Mailbox';
-import Backdrop from './components/UI/Backdrop/Backdrop';
 import SideDrawer from './components/UI/Navigation/SideDrawer/SideDrawer';
-import ComposeBtn from './components/UI/Navigation/ComposeBtn/ComposeBtn';
 import { Route, Switch, BrowserRouter} from 'react-router-dom';
 import ComposeEmail from './components/ComposeEmail/ComposeEmail';
 
@@ -39,7 +37,7 @@ class App extends Component {
           <Route path="/" render={(props) => <Mailbox sideDrawerStatus={this.state.showSideDrawer} onChangeVersion={this.sideDrawerToggleHandler}/>}/>
         </Switch>
       </BrowserRouter>
-      <ComposeBtn />
+     
       </div>
     );
   }

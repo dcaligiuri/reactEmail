@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import classes from './ComposeBtn.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen} from '@fortawesome/free-solid-svg-icons';
-import { Redirect } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 class ComposeBtn extends Component {
 
@@ -12,10 +12,14 @@ class ComposeBtn extends Component {
 
     return (
         <div>
-            <button 
-                className={classes.ComposeBtn}>
-                <FontAwesomeIcon icon={faPen}/>
-            </button>
+            <NavLink to='/compose'>
+                <button 
+                    className={classes.ComposeBtn}>
+                    <FontAwesomeIcon icon={faPen}/>
+                </button>
+            </NavLink>
+            
+           
         </div>
     );
     }

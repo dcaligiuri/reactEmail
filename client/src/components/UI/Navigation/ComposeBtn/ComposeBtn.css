@@ -10,6 +10,11 @@
 }
 
 
+.ComposeBtn a {
+    color: white;
+}
+
+
 .ComposeEmail {
     position: fixed;
     width: 280px;

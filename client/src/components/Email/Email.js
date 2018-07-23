@@ -26,7 +26,8 @@ class Email extends Component {
         <Row onClick={() => this.readEmail(this.props.id)} className="show-grid">
           <Col xs={2}>
            <EmailLeft 
-            proPic={this.props.proPic}/>
+            proPic={this.props.proPic}
+            altText={this.props.sender}/>
           </Col>
           <Col xs={8} >
             <EmailMiddle
