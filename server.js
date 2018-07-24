@@ -14,13 +14,16 @@ function toBool(string){
   }
 }
 
-app.get('/api/inbox', (req, res) => {
+app.get('/api/inbox/:query', (req, res) => {
+
+
+  const query = JSON.parse(req.params.query);
  
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("heroku_5mtfkq7c");
 
-    dbo.collection("emails").find({}).toArray(function(err, emails) {
+    dbo.collection("emails").find(query).toArray(function(err, emails) {
       if (err) throw err;
       res.json(emails);
       db.close();

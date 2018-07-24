@@ -2,4 +2,15 @@
     transform: translateY(0);
     transition: 0.3s ease-out;
     margin-top: 0px;
+    height:100vh;
 }
+
+.Input {
+    display: block;
+    width: 100%;
+    border-right: none;
+    border-left: none;
+    height: 5%;
+}
+
+

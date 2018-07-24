@@ -5,6 +5,7 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import EmailLeft from './EmailLeft/EmailLeft';
 import EmailMiddle from './EmailMiddle/EmailMiddle';
 import EmailRight from './EmailRight/EmailRight';
+import { NavLink } from 'react-router-dom';
 
 class Email extends Component {
 
@@ -23,7 +24,7 @@ class Email extends Component {
   render() {
     return (
         <Grid>
-        <Row onClick={() => this.readEmail(this.props.id)} className="show-grid">
+        <NavLink to={this.props.id}><Row onClick={() => this.readEmail(this.props.id)} className="show-grid">
           <Col xs={2}>
            <EmailLeft 
             proPic={this.props.proPic}
@@ -45,7 +46,9 @@ class Email extends Component {
           </Col>
         </Row>
         <hr/>
+        </NavLink>
       </Grid>
+     
     );
   }
 }

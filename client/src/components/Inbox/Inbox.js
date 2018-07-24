@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import classes from './Inbox.css';
 import Email from '../Email/Email';
+import Spinner from '../UI/Spinner/Spinner';
 
 
 class Inbox extends Component {
@@ -9,14 +10,33 @@ class Inbox extends Component {
     emails: null
   }
 
+
+  translateStringToQuery(str){
+    switch(str) {
+      case str === 'inbox':
+        return {};
+        break;
+      case str === 'starred':
+        return {"starred": true};
+        break;
+      case str === 'trash':
+        return {"trash": true};
+        break;
+      default:
+        return null;
+  }
+  }
+
   componentDidMount() {
-    fetch('/api/inbox')
+    const query = this.translateStringToQuery(this.props.display);
+    fetch('/api/inbox/' + JSON.stringify(query))
       .then(res => res.json())
-      .then(emails => this.setState({emails}, () => console.log('Emails fetched...', emails)));
+      .then(emails => this.setState({emails}));
   }
 
 
   render() {
+
     return (
       <div>
         {this.state.emails ? this.state.emails.map( 
@@ -27,7 +47,7 @@ class Inbox extends Component {
                        dateSent={em.dateSent}
                        read={em.read}
                        proPic={em.profilePic}
-                       id={em._id}/> )  : null } 
+                       id={em._id}/> )  : <Spinner /> } 
       </div>
     );
   }

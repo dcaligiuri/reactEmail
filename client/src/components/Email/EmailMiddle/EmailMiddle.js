@@ -15,7 +15,7 @@ class EmailMiddle extends Component {
   render() {
     
     let stylingSubject = [classes.Line];
-    let stylingSender = [];
+    let stylingSender = [classes.Sender];
     if(this.props.read === false){
       stylingSubject = [classes.Line, classes.Bold].join(' ');
       stylingSender = [classes.Bold].join(' ');

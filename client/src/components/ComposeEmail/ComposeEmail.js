@@ -11,14 +11,13 @@ class ComposeEmail extends Component {
   render() {
     return (
       <div className={classes.ComposeBackground}>
-        <div style={{display: 'block'}}>
-          <NavLink to='/'><FontAwesomeIcon icon={faChevronLeft}/></NavLink>
-          <FontAwesomeIcon style={{float: 'right'}} icon={faPaperPlane}/>
+        <div style={{display: 'block', height: '5%'}}>
+          <NavLink to='/'><FontAwesomeIcon style={{marginTop: '2%'}} icon={faChevronLeft}/></NavLink>
+          <FontAwesomeIcon style={{float: 'right', marginTop: '2%'}} icon={faPaperPlane}/>
         </div>
-        <hr />
-        <input style={{display: 'block', width: '100%'}}/>
-        <input style={{display: 'block', width: '100%'}}/>
-        <textarea style={{display: 'block', width: '100%'}}/>
+        <input className={classes.Input} placeholder="To"/>
+        <input className={classes.Input} placeholder="Subject" />
+        <textarea className={classes.Input} style={{height: '85%'}} placeholder="Compose Email" />
       </div>
     );
   }

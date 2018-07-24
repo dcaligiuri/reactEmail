@@ -7,9 +7,13 @@
 
 .Line {
     margin-top: -10px;
+    color: black;
 }
 
 .Bold { 
     font-weight: bold;
 }
 
+.Sender {
+    color: black;
+}

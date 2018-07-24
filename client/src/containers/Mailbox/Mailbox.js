@@ -6,15 +6,18 @@ import ComposeBtn from '../../components/UI/Navigation/ComposeBtn/ComposeBtn';
 class Mailbox extends Component {
 
   sideDrawerToggleHandler = (status) => {
-      this.props.onChangeVersion(status); 
+    this.props.onChangeVersion(status); 
   }
 
 
   render() {
     return (
       <div>
-          <InboxHeader sideDrawerStatus={this.props.sideDrawerStatus} onChangeVersion={this.sideDrawerToggleHandler} /> 
-          <Inbox />
+          <InboxHeader
+            sideDrawerStatus={this.props.sideDrawerStatus} 
+            onChangeVersion={this.sideDrawerToggleHandler} /> 
+          <Inbox 
+            display={this.props.display} />
           <ComposeBtn />
       </div>
     );
