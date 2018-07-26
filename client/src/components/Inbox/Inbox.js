@@ -13,16 +13,16 @@ class Inbox extends Component {
 
 
   translateStringToQuery(str){
-      if (str === 'inbox'){
+      if (str === 'Inbox'){
         return {};
       }
-      else if (str === 'starred'){
+      else if (str === 'Starred'){
         return {"starred": true};
       }
-      else if (str === 'trash'){
+      else if (str === 'Trash'){
         return {"trash": true};
       }
-      else if (str === 'sent'){
+      else if (str === 'Sent'){
         return {"sent": true};
       }
       else
