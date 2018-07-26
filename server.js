@@ -7,7 +7,7 @@ var ObjectId = require('mongoose').Types.ObjectId;
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'client/public/index.html')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 function toBool(string){
   switch(string.toLowerCase().trim()){
@@ -83,7 +83,7 @@ app.post('/api/read/:id', (req, res) => {
 
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/public/index.html'));
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 
