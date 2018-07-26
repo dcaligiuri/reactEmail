@@ -11,11 +11,9 @@ class ReadEmail extends Component {
   }
 
   componentDidMount() {
-
-    fetch('/api/read/' + '5b5551eac1bade10a4ec9c83')
+    fetch('/api/read/' + this.props.match.params.emailId)
       .then(res => res.json())
       .then(readEmail => {
-        console.log(readEmail);
         this.setState({readEmail: readEmail});
       })
   }

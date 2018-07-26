@@ -16,8 +16,7 @@ class Email extends Component {
       return;
     }
     else 
-    return;
-   
+      this.props.history.push('/' + emailId);
   }
 
   render() {
@@ -53,4 +52,4 @@ class Email extends Component {
   }
 }
 
-export default Email;
+export default withRouter(Email);

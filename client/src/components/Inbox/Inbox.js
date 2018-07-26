@@ -14,7 +14,7 @@ class Inbox extends Component {
 
   translateStringToQuery(str){
       if (str === 'Inbox'){
-        return {};
+        return {"trash": false};
       }
       else if (str === 'Starred'){
         return {"starred": true};
