@@ -12,26 +12,40 @@ class Inbox extends Component {
 
 
   translateStringToQuery(str){
-    switch(str) {
-      case str === 'inbox':
+      if (str === 'inbox'){
         return {};
-        break;
-      case str === 'starred':
+      }
+      else if (str === 'starred'){
         return {"starred": true};
-        break;
-      case str === 'trash':
+      }
+      else if (str === 'trash'){
         return {"trash": true};
-        break;
-      default:
+      }
+      else if (str === 'sent'){
+        return {"sent": true};
+      }
+      else
         return null;
   }
-  }
+      
 
   componentDidMount() {
     const query = this.translateStringToQuery(this.props.display);
     fetch('/api/inbox/' + JSON.stringify(query))
       .then(res => res.json())
       .then(emails => this.setState({emails}));
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState({loading: true});
+    if (this.props.display !== nextProps.display){
+      const query = this.translateStringToQuery(nextProps.display);
+        fetch('/api/inbox/' + JSON.stringify(query))
+          .then(res => res.json())
+          .then(emails => {
+            this.setState({emails: emails});
+          });
+    }
   }
 
 

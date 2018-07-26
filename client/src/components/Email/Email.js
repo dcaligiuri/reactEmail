@@ -11,20 +11,20 @@ class Email extends Component {
 
   readEmail = (emailId, event) => {
 
+    //if clicked star, don't read email
+    if (event.target.textContent === '★' || event.target.textContent === '☆'){
+      return;
+    }
 
-    fetch('/api/read/' + emailId, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      }
-    })
+    
   }
 
   render() {
+
+
     return (
         <Grid>
-        <NavLink to={this.props.id}><Row onClick={() => this.readEmail(this.props.id)} className="show-grid">
+        <NavLink to={this.props.id}><Row className="show-grid">
           <Col xs={2}>
            <EmailLeft 
             proPic={this.props.proPic}

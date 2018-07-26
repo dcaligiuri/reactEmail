@@ -18,6 +18,8 @@ app.get('/api/inbox/:query', (req, res) => {
 
 
   const query = JSON.parse(req.params.query);
+
+  console.log(query);
  
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -30,6 +32,22 @@ app.get('/api/inbox/:query', (req, res) => {
       });
   });
 
+
+});
+
+
+app.get('/api/read/:emailId', (req, res) => {
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("heroku_5mtfkq7c");
+
+    dbo.collection("emails").findOne({ _id : new ObjectId(req.params.emailId) }, (function(err, email) {
+      if (err) throw err;
+      res.json(email);
+      db.close();
+    }));
+  });
 
 });
 

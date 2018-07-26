@@ -2,6 +2,10 @@
     transform: translateY(0);
     transition: 0.3s ease-out;
     margin-top: 0px;
+    
+}
+
+.FormBackground {
     height:100vh;
 }
 
