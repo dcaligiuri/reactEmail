@@ -6,6 +6,8 @@ var ObjectId = require('mongoose').Types.ObjectId;
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, 'client/public/index.html')));
+
 function toBool(string){
   switch(string.toLowerCase().trim()){
       case "true": case "yes": case "1": return true;
@@ -78,6 +80,10 @@ app.post('/api/read/:id', (req, res) => {
 
 });
 
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/public/index.html'));
+});
 
 
 const port = process.env.PORT || 5000;
