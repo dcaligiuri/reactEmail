@@ -22,7 +22,7 @@ class InboxHeader extends Component {
                     <FontAwesomeIcon onClick={this.HamburgerClickHandler} className={classes.Hamburger} icon={faBars} />
                 </Col>
                 <Col xs={8} >
-                    <h3 className={classes.InboxHeader}>Inbox</h3>
+                    <h3 className={classes.InboxHeader}>{this.props.header}</h3>
                 </Col>
             </Row>
         </Grid>

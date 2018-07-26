@@ -18,8 +18,6 @@ app.get('/api/inbox/:query', (req, res) => {
 
 
   const query = JSON.parse(req.params.query);
-
-  console.log(query);
  
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;

@@ -9,7 +9,7 @@ class Mailbox extends Component {
   
   state = {
     showSideDrawer: false,
-    display: 'inbox'
+    display: 'Inbox'
   } 
 
   sideDrawerToggleHandler = (status) => {
@@ -28,6 +28,7 @@ class Mailbox extends Component {
 
   changeDisplay = (displayStatus) => {
     this.setState({display: displayStatus});
+    this.setState({showSideDrawer: !this.state.showSideDrawer});
   }
 
   render() {
@@ -40,6 +41,7 @@ class Mailbox extends Component {
             display={this.state.display}/>
           <InboxHeader
             sideDrawerStatus={this.state.sideDrawerStatus} 
+            header={this.state.display}
             onChangeVersion={this.sideDrawerToggleHandler} /> 
           <Inbox 
             display={this.state.display} />

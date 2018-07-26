@@ -5,18 +5,19 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import EmailLeft from './EmailLeft/EmailLeft';
 import EmailMiddle from './EmailMiddle/EmailMiddle';
 import EmailRight from './EmailRight/EmailRight';
-import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
 
 class Email extends Component {
 
-  readEmail = (emailId, event) => {
+  readEmail(emailId, event) {
 
     //if clicked star, don't read email
     if (event.target.textContent === '★' || event.target.textContent === '☆'){
       return;
     }
-
-    
+    else 
+    return;
+   
   }
 
   render() {
@@ -24,7 +25,7 @@ class Email extends Component {
 
     return (
         <Grid>
-        <NavLink to={this.props.id}><Row className="show-grid">
+        <Row onClick={(event) => this.readEmail(this.props.id, event)} className="show-grid">
           <Col xs={2}>
            <EmailLeft 
             proPic={this.props.proPic}
@@ -46,7 +47,6 @@ class Email extends Component {
           </Col>
         </Row>
         <hr/>
-        </NavLink>
       </Grid>
      
     );

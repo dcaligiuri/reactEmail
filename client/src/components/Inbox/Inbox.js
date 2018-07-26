@@ -7,7 +7,8 @@ import Spinner from '../UI/Spinner/Spinner';
 class Inbox extends Component {
 
   state = {
-    emails: null
+    emails: null,
+    loading: false
   }
 
 
@@ -33,17 +34,20 @@ class Inbox extends Component {
     const query = this.translateStringToQuery(this.props.display);
     fetch('/api/inbox/' + JSON.stringify(query))
       .then(res => res.json())
-      .then(emails => this.setState({emails}));
+      .then(emails => {
+        this.setState({emails: emails});
+      })
   }
 
   componentWillReceiveProps(nextProps){
-    this.setState({loading: true});
     if (this.props.display !== nextProps.display){
+      this.setState({loading: true});
       const query = this.translateStringToQuery(nextProps.display);
         fetch('/api/inbox/' + JSON.stringify(query))
           .then(res => res.json())
           .then(emails => {
             this.setState({emails: emails});
+            this.setState({loading: false});
           });
     }
   }
@@ -53,7 +57,7 @@ class Inbox extends Component {
 
     return (
       <div>
-        {this.state.emails ? this.state.emails.map( 
+        {(this.state.emails && this.state.loading === false) ? this.state.emails.map( 
           em => <Email key={em._id} sender={em.sender} 
                        subject={em.subject} 
                        body={em.body}

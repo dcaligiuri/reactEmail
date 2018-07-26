@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 //import classes from './App.css';
 import Mailbox from './containers/Mailbox/Mailbox';
-import { Route, Switch, BrowserRouter} from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import ComposeEmail from './components/ComposeEmail/ComposeEmail';
 import ReadEmail from './components/ReadEmail/ReadEmail';
 
