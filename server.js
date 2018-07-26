@@ -80,6 +80,6 @@ app.post('/api/read/:id', (req, res) => {
 
 
 
-const port = 5000;
+const port = 5000 || process.env.PORT;
 
 app.listen(port, () => `Server running on port ${port}`);
