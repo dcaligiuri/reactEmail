@@ -5,7 +5,15 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://heroku_gcqllm80:38ek24skubgto7pkei0g8d9oe7@ds153851.mlab.com:53851/heroku_gcqllm80";
 var ObjectId = require('mongoose').Types.ObjectId; 
 
+
 const app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
@@ -63,6 +71,31 @@ app.post('/api/star/:id', (req, res) => {
     });
   });
   
+});
+
+
+app.post('/api/compose', (req, res) => {
+
+  const d = new Date();
+  const month = monthNames[d.getMonth()];
+  const day = d.getDay();
+  const dateStr = month + " " + day;
+ 
+  let emailComposed = {"sender": req.headers.email, "subject": req.headers.subject, "body": req.headers.content,
+                       "starred": false, dateSent: dateStr , "read": false, "trash": false, 
+                       "profilePic": "https://officialpsds.com/imageview/r6/v0/r6v0v1_large.png?1521316506" };
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("heroku_gcqllm80");
+  
+    dbo.collection('emails').insert (emailComposed, function( err, result ) {
+      if ( err ) throw err;
+      res.json({Success: 'Sucessfully Added'});
+    });
+  });
+
+
 });
 
 

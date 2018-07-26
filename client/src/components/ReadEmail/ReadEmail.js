@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './ReadEmail';
 import SubjectStar from './SubjectStar/SubjectStar';
 import ReadMiddle from './ReadMiddle/ReadMiddle';
+import InboxHeader from '../InboxHeader/InboxHeader';
 
 
 class ReadEmail extends Component {
@@ -23,6 +24,7 @@ class ReadEmail extends Component {
 
     return (
       <div>
+        <InboxHeader />
         {this.state.readEmail ? <SubjectStar subject={this.state.readEmail.subject} starred={this.state.readEmail.starred}/> : null}
         <hr />
         {this.state.readEmail ? <ReadMiddle 

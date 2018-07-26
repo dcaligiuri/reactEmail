@@ -18,8 +18,6 @@ class ComposeBtn extends Component {
                     <FontAwesomeIcon icon={faPen}/>
                 </button>
             </NavLink>
-            
-           
         </div>
     );
     }
