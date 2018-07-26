@@ -20,7 +20,7 @@ app.get('/api/inbox/:query', (req, res) => {
   
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    var dbo = db.db("heroku_5mtfkq7c");
+    var dbo = db.db("heroku_gcqllm80");
 
     dbo.collection("emails").find(query).toArray(function(err, emails) {
       if (err) throw err;
@@ -37,7 +37,7 @@ app.get('/api/read/:emailId', (req, res) => {
 
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    var dbo = db.db("heroku_5mtfkq7c");
+    var dbo = db.db("heroku_gcqllm80");
 
     dbo.collection("emails").findOne({ _id : new ObjectId(req.params.emailId) }, (function(err, email) {
       if (err) throw err;
@@ -52,7 +52,7 @@ app.get('/api/read/:emailId', (req, res) => {
 app.post('/api/star/:id', (req, res) => {
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    var dbo = db.db("heroku_5mtfkq7c");
+    var dbo = db.db("heroku_gcqllm80");
   
     dbo.collection('emails').update ({ _id : new ObjectId(req.params.id) },{ $set : { "starred": toBool(req.headers.starred) } }, function( err, result ) {
       if ( err ) throw err;
@@ -68,7 +68,7 @@ app.post('/api/read/:id', (req, res) => {
 
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    var dbo = db.db("heroku_5mtfkq7c");
+    var dbo = db.db("heroku_gcqllm80");
   
     dbo.collection('emails').update ({ _id : new ObjectId(req.params.id) },{ $set : { "read": true } }, function( err, result ) {
       if ( err ) throw err;
