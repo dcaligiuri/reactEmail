@@ -31,8 +31,8 @@ class ComposeEmail extends Component {
       <div className={classes.ComposeBackground}>
       <form onSubmit={this.handleSubmit} className={classes.FormBackground}>
         <div style={{display: 'block', height: '5%'}}>
-          <NavLink to='/'><FontAwesomeIcon style={{marginTop: '2%'}} icon={faChevronLeft}/></NavLink>
-          <button><FontAwesomeIcon style={{float: 'right', marginTop: '2%'}} icon={faPaperPlane}/></button>
+          <NavLink to='/'><FontAwesomeIcon style={{marginTop: '2%', color: 'grey'}} icon={faChevronLeft}/></NavLink>
+          <button style={{float: 'right'}}><FontAwesomeIcon icon={faPaperPlane}/></button>
         </div>
           <input name="email" type="email" className={classes.Input} placeholder="To"/>
           <input name="subject" type="subject" className={classes.Input} placeholder="Subject" />

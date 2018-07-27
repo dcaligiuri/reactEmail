@@ -1,18 +1,15 @@
 .InboxHeader { 
-    margin: 8px;
     color: white;
     text-align: center;
 }
 
 
-
 .Hamburger {
   color:white;
-  margin-top: 14px;
 }
 
 
 .InboxBackground {
   background-color: #db3236;
-  height: 45px;
+  height: 50px;
 }

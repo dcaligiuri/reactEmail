@@ -3,6 +3,7 @@ import InboxHeader from '../../components/InboxHeader/InboxHeader';
 import Inbox from '../../components/Inbox/Inbox';
 import ComposeBtn from '../../components/UI/Navigation/ComposeBtn/ComposeBtn';
 import SideDrawer from '../../components/UI/Navigation/SideDrawer/SideDrawer';
+import classes from './Mailbox.css';
 
 class Mailbox extends Component {
   
@@ -33,7 +34,7 @@ class Mailbox extends Component {
 
   render() {
     return (
-      <div>
+      <div className={classes.Mailbox}>
           <SideDrawer 
             closed={this.sideDrawerClosedHandler}
             open={this.state.showSideDrawer}

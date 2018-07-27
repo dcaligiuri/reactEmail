@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './InboxHeader.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {Grid, Row, Col} from 'react-bootstrap';
 
 class InboxHeader extends Component {
@@ -13,20 +13,24 @@ class InboxHeader extends Component {
     }
 
 
-  render() {
-    return (
-      <div className={classes.InboxBackground}>
-        <Grid>
-            <Row className="show-grid">
-                <Col xs={2}>
-                    <FontAwesomeIcon onClick={this.HamburgerClickHandler} className={classes.Hamburger} icon={faBars} />
-                </Col>
-                <Col xs={8} >
-                    <h3 className={classes.InboxHeader}>{this.props.header}</h3>
-                </Col>
-            </Row>
-        </Grid>
-      </div>
+    render() {
+        return (
+                <Grid>
+                    <Row className={classes.InboxBackground}>
+                        <Col xs={2}>
+                            <FontAwesomeIcon 
+                                onClick={this.HamburgerClickHandler} 
+                                className={classes.Hamburger} 
+                                icon={faBars} />
+                        </Col>
+                        <Col xs={8} >
+                            <h3 className={classes.InboxHeader}>{this.props.header}</h3>
+                        </Col>
+                        <Col xs={2} >
+                            <FontAwesomeIcon className={classes.Hamburger} icon={faSearch} />
+                        </Col>
+                    </Row>
+                </Grid>
     );
   }
 }

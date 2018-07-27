@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-//import classes from './Email.css';
 import {Grid, Row, Col} from 'react-bootstrap';
 
 import EmailLeft from './EmailLeft/EmailLeft';
 import EmailMiddle from './EmailMiddle/EmailMiddle';
 import EmailRight from './EmailRight/EmailRight';
 import { withRouter } from 'react-router-dom'
+import classes from './Email.css';
 
 class Email extends Component {
 
@@ -16,15 +16,20 @@ class Email extends Component {
       return;
     }
     else 
+      fetch('/api/read/' + emailId, {
+        method: 'POST'
+      });
       this.props.history.push('/' + emailId);
   }
+
 
   render() {
 
 
     return (
+      <div>
         <Grid>
-        <Row onClick={(event) => this.readEmail(this.props.id, event)} className="show-grid">
+        <Row onClick={(event) => this.readEmail(this.props.id, event)}>
           <Col xs={2}>
            <EmailLeft 
             proPic={this.props.proPic}
@@ -45,8 +50,8 @@ class Email extends Component {
               read={this.props.read}/>
           </Col>
         </Row>
-        <hr/>
       </Grid>
+      </div>
      
     );
   }

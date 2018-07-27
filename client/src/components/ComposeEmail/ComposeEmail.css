@@ -18,3 +18,9 @@
 }
 
 
+button {
+    background-color: white;
+    border: none;
+    margin-top: 2%;
+    color: grey;
+}
