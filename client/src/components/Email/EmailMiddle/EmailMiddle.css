@@ -10,6 +10,11 @@
     color: black;
 }
 
+p {
+    margin-top: 5.33px;
+    margin-bottom: 5.33px;
+}
+
 .Bold { 
     font-weight: bold;
 }

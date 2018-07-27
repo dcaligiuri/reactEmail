@@ -24,7 +24,10 @@ class SideDrawer extends Component {
             <div>
                 <Backdrop show={this.props.open} clicked={this.props.closed}/>
                 <div className={attachedClasses.join(' ')}>
-                    <EmailLeft proPic="https://officialpsds.com/imageview/r6/v0/r6v0v1_large.png?1521316506" altText="Bart"/> 
+                    <img 
+                        class="img-responsive" 
+                        src="https://officialpsds.com/imageview/r6/v0/r6v0v1_large.png?1521316506"
+                        altText="Bart"/> 
                     <p>Bart Simpson</p>
                     <p>bart@mail.com</p>
                     <hr />
