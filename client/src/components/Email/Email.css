@@ -1,0 +1,8 @@
+hr {
+  clear:both;
+  display:float;        
+  background-color:grey;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 1px;
+}

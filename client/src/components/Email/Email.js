@@ -27,7 +27,6 @@ class Email extends Component {
 
 
     return (
-      <div>
         <Grid>
         <Row onClick={(event) => this.readEmail(this.props.id, event)}>
           <Col xs={2}>
@@ -49,9 +48,9 @@ class Email extends Component {
               starred={this.props.starred}
               read={this.props.read}/>
           </Col>
+          <hr />
         </Row>
       </Grid>
-      </div>
      
     );
   }

@@ -27,7 +27,7 @@ class InboxHeader extends Component {
                             <h3 className={classes.InboxHeader}>{this.props.header}</h3>
                         </Col>
                         <Col xs={2} >
-                            <FontAwesomeIcon className={classes.Hamburger} icon={faSearch} />
+                            <FontAwesomeIcon style={{display: 'none'}} className={classes.Hamburger} icon={faSearch} />
                         </Col>
                     </Row>
                 </Grid>
