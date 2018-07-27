@@ -25,9 +25,9 @@ class SideDrawer extends Component {
                 <Backdrop show={this.props.open} clicked={this.props.closed}/>
                 <div className={attachedClasses.join(' ')}>
                     <img 
-                        class="img-responsive" 
+                        className="img-responsive" 
                         src="https://officialpsds.com/imageview/r6/v0/r6v0v1_large.png?1521316506"
-                        altText="Bart"/> 
+                        alt="Bart"/> 
                     <p>Bart Simpson</p>
                     <p>bart@mail.com</p>
                     <hr />
