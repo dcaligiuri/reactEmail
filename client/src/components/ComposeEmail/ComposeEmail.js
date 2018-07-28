@@ -2,12 +2,15 @@
 import React, { Component } from 'react';
 import classes from './ComposeEmail.css';
 import BackBtn from '../UI/Navigation/BackBtn/BackBtn';
-import SendEmailBtn from '../UI/SendEmailBtn/SendEmailBtn';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane} from '@fortawesome/free-solid-svg-icons';
+import { withRouter } from 'react-router-dom';
 
 class ComposeEmail extends Component {
 
 
   handleSubmit(event) {
+
     event.preventDefault();
     const email = event.target.email.value;
     const content = event.target.content.value;
@@ -22,16 +25,20 @@ class ComposeEmail extends Component {
         'content': content,
         'email': email
       }
-    });
+    }).then(done => this.props.history.push('/'));
+
   }
 
   render() {
     return (
       <div className={classes.ComposeBackground}>
-      <form onSubmit={this.handleSubmit} className={classes.FormBackground}>
+      <form onSubmit={this.handleSubmit.bind(this)} className={classes.FormBackground}>
         <div style={{display: 'block', height: '5%'}}>
           <BackBtn style={{color:'grey', marginTop:'2%', float: 'left'}}/>
-          <SendEmailBtn />
+          <button 
+                    style={{float: 'right', outline: 'none'}}>
+                    <FontAwesomeIcon icon={faPaperPlane}/>
+          </button>
         </div>
           <input name="email" type="email" className={classes.Input} placeholder="To"/>
           <input name="subject" type="subject" className={classes.Input} placeholder="Subject" />
@@ -42,7 +49,7 @@ class ComposeEmail extends Component {
   }
 }
 
-export default ComposeEmail;
+export default withRouter(ComposeEmail);
 
 
 

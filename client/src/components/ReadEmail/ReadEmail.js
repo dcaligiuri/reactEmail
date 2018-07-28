@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReadSubjectStar from './ReadSubjectStar/ReadSubjectStar';
 import ReadMiddle from './ReadMiddle/ReadMiddle';
 import ReadHeader from '../ReadEmail/ReadHeader/ReadHeader';
+import ReadEmailBody from './ReadEmailBody/ReadEmailBody';
+import classes from './ReadEmail.css';
 
 
 class ReadEmail extends Component {
@@ -33,8 +35,12 @@ class ReadEmail extends Component {
                                   proPic={this.state.readEmail.profilePic} 
                                   sender={this.state.readEmail.sender}
                                   dateSent={this.state.readEmail.dateSent}
-                                  altText={this.state.readEmail.sender} /> : null}
-        {this.state.readEmail ? this.state.readEmail.body : null }
+                                  altText={this.state.readEmail.sender} /> : null}   
+        {this.state.readEmail ? <ReadEmailBody
+                                  body={this.state.readEmail.body}/> : null}   
+        
+                                  
+        
         <hr />
       </div>
     ); 
@@ -42,6 +48,8 @@ class ReadEmail extends Component {
 }
 
 export default ReadEmail;
+
+
 
 
 
