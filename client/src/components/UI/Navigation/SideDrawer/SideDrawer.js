@@ -31,10 +31,10 @@ class SideDrawer extends Component {
                     <p>bart@mail.com</p>
                     <hr />
                     <nav>
-                        <h1 onClick={() => this.clickHandler('Inbox')} ><FontAwesomeIcon icon={faArchive}/>Inbox</h1>
-                        <h1 onClick={() => this.clickHandler('Starred')} ><FontAwesomeIcon icon={faStar}/>Starred</h1>
-                        <h1 onClick={() => this.clickHandler('Trash')} ><FontAwesomeIcon icon={faTrash}/>Trash</h1>
-                        <h1 onClick={() => this.clickHandler('Sent')} ><FontAwesomeIcon icon={faPaperPlane}/>Sent</h1>
+                        <h1 onClick={() => this.clickHandler('Inbox')} ><FontAwesomeIcon icon={faArchive}/> Inbox</h1>
+                        <h1 onClick={() => this.clickHandler('Starred')} ><FontAwesomeIcon icon={faStar}/> Starred</h1>
+                        <h1 onClick={() => this.clickHandler('Trash')} ><FontAwesomeIcon icon={faTrash}/> Trash</h1>
+                        <h1 onClick={() => this.clickHandler('Sent')} ><FontAwesomeIcon icon={faPaperPlane}/> Sent</h1>
                     </nav>
                 </div>
             </div>
