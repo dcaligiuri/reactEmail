@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import InboxHeader from '../../components/InboxHeader/InboxHeader';
+import InboxHeader from '../../components/Inbox/InboxHeader/InboxHeader';
 import Inbox from '../../components/Inbox/Inbox';
 import ComposeBtn from '../../components/UI/Navigation/ComposeBtn/ComposeBtn';
 import SideDrawer from '../../components/UI/Navigation/SideDrawer/SideDrawer';

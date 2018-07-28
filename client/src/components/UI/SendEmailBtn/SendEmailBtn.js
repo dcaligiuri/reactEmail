@@ -9,7 +9,7 @@ class SendEmailBtn extends Component {
     render() {
         return (
             <div>
-                <button style={{float: 'right'}}><FontAwesomeIcon icon={faPaperPlane}/></button>
+                <button style={{float: 'right', outline: 'none'}}><FontAwesomeIcon icon={faPaperPlane}/></button>
             </div>
         );
   }

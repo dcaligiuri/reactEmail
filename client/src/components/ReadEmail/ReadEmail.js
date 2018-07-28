@@ -25,7 +25,10 @@ class ReadEmail extends Component {
     return (
       <div>
         {this.state.readEmail ? <ReadHeader emailId={this.state.readEmail._id}/> : null }
-        {this.state.readEmail ? <ReadSubjectStar subject={this.state.readEmail.subject} starred={this.state.readEmail.starred}/> : null}
+        {this.state.readEmail ? <ReadSubjectStar 
+                                  emailId={this.state.readEmail._id} 
+                                  subject={this.state.readEmail.subject}
+                                  starred={this.state.readEmail.starred}/> : null}
         <hr />
         {this.state.readEmail ? <ReadMiddle 
                                   proPic={this.state.readEmail.profilePic} 

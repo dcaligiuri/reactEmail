@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classes from './InboxHeader.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faSearch} from '@fortawesome/free-solid-svg-icons';
-import {Grid, Row, Col} from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class InboxHeader extends Component {
 
