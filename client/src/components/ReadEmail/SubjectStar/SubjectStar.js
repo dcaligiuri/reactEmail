@@ -18,7 +18,7 @@ class SubjectStar extends Component {
 
     return (
         <Grid>
-            <Row className="show-grid">
+            <Row>
                 <Col xs={10}>
                     {this.props.subject}
                 </Col>

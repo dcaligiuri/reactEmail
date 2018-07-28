@@ -16,8 +16,9 @@ class ReadMiddle extends Component {
                         altText={this.props.sender}/>
                 </Col>
                 <Col xs={8}>
-                   {this.props.sender}
-                   {this.props.dateSent}
+                   <p>{this.props.sender}</p>
+                   <p>to me</p>
+                   <p>{this.props.dateSent}</p>
                 </Col>
                 <Col xs={2}>
                    
