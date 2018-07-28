@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import classes from './Inbox.css';
 import Email from '../Email/Email';
 import Spinner from '../UI/Spinner/Spinner';
 

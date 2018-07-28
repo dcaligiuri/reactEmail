@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import classes from './ReadEmail';
 import ReadSubjectStar from './ReadSubjectStar/ReadSubjectStar';
 import ReadMiddle from './ReadMiddle/ReadMiddle';
 import ReadHeader from '../ReadEmail/ReadHeader/ReadHeader';

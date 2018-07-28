@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import classes from './Star.css';
 
 class Star extends Component {
 
@@ -33,15 +34,20 @@ class Star extends Component {
   render() {
     let star = null;
     if (this.state.starred === true){
-      star = <span style={{color: 'yellow'}}>★</span>
+      star = <p 
+                className={classes.Star}
+                onClick={() => this.starUnstar(this.state.starred, this.props.emailId)} 
+                style={{color: 'yellow'}}>★</p>
     }
     else if (this.state.starred === false){
-      star = <span>☆</span>
+      star = <p
+                className={classes.Star}
+                onClick={() => this.starUnstar(this.state.starred, this.props.emailId)}>☆</p>
     }
     
     return (
       <div style={{textAlign: 'right'}}>
-        <p onClick={() => this.starUnstar(this.state.starred, this.props.emailId)}>{star}</p>
+          {star}
       </div>
     );
   }

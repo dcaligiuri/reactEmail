@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import classes from './BackBtn.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
