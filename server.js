@@ -35,7 +35,7 @@ app.get('/api/inbox/:query', (req, res) => {
 
     dbo.collection("emails").find(query).toArray(function(err, emails) {
       if (err) throw err;
-      res.json(emails);
+      res.json(emails.reverse());
       db.close();
       });
   });
@@ -81,7 +81,7 @@ app.post('/api/compose', (req, res) => {
   const day = d.getDay();
   const dateStr = month + " " + day;
  
-  let emailComposed = {"sender": req.headers.email, "subject": req.headers.subject, "body": req.headers.content,
+  let emailComposed = {"sender": "bart@mail.com", "to": req.headers.email, "subject": req.headers.subject, "body": req.headers.content,
                        "starred": false, dateSent: dateStr , "read": false, "trash": false, 
                        "profilePic": "https://officialpsds.com/imageview/r6/v0/r6v0v1_large.png?1521316506" };
 
@@ -95,6 +95,36 @@ app.post('/api/compose', (req, res) => {
     });
   });
 
+
+});
+
+
+app.post('/api/trash/:id', (req, res) => {
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("heroku_gcqllm80");
+  
+    dbo.collection('emails').update ({ _id : new ObjectId(req.params.id) },{ $set : { "trash": true } }, function( err, result ) {
+      if ( err ) throw err;
+      res.json({Success: 'Sucessfully Updated'});
+    });
+  });
+
+});
+
+
+app.post('/api/markRead/:id', (req, res) => {
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("heroku_gcqllm80");
+  
+    dbo.collection('emails').update ({ _id : new ObjectId(req.params.id) },{ $set : { "read": false } }, function( err, result ) {
+      if ( err ) throw err;
+      res.json({Success: 'Sucessfully Updated'});
+    });
+  });
 
 });
 

@@ -3,7 +3,6 @@ import classes from './SideDrawer.css';
 import Backdrop from '../../Backdrop/Backdrop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faStar, faArchive, faPaperPlane} from '@fortawesome/free-solid-svg-icons';
-import EmailLeft from '../../../Email/EmailLeft/EmailLeft';
 
 
 class SideDrawer extends Component {

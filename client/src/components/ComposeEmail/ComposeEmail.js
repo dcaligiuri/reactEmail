@@ -1,9 +1,8 @@
 
 import React, { Component } from 'react';
 import classes from './ComposeEmail.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faPaperPlane} from '@fortawesome/free-solid-svg-icons';
-import { NavLink } from 'react-router-dom';
+import BackBtn from '../UI/Navigation/BackBtn/BackBtn';
+import SendEmailBtn from '../UI/SendEmailBtn/SendEmailBtn';
 
 class ComposeEmail extends Component {
 
@@ -31,8 +30,8 @@ class ComposeEmail extends Component {
       <div className={classes.ComposeBackground}>
       <form onSubmit={this.handleSubmit} className={classes.FormBackground}>
         <div style={{display: 'block', height: '5%'}}>
-          <NavLink to='/'><FontAwesomeIcon style={{marginTop: '2%', color: 'grey'}} icon={faChevronLeft}/></NavLink>
-          <button style={{float: 'right'}}><FontAwesomeIcon icon={faPaperPlane}/></button>
+          <BackBtn style={{color:'grey', marginTop:'2%', float: 'left'}}/>
+          <SendEmailBtn />
         </div>
           <input name="email" type="email" className={classes.Input} placeholder="To"/>
           <input name="subject" type="subject" className={classes.Input} placeholder="Subject" />

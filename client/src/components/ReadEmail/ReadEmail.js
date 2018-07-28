@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import classes from './ReadEmail';
-import SubjectStar from './SubjectStar/SubjectStar';
+//import classes from './ReadEmail';
+import ReadSubjectStar from './ReadSubjectStar/ReadSubjectStar';
 import ReadMiddle from './ReadMiddle/ReadMiddle';
-import InboxHeader from '../InboxHeader/InboxHeader';
+import ReadHeader from '../ReadEmail/ReadHeader/ReadHeader';
 
 
 class ReadEmail extends Component {
@@ -24,8 +24,8 @@ class ReadEmail extends Component {
 
     return (
       <div>
-        <InboxHeader />
-        {this.state.readEmail ? <SubjectStar subject={this.state.readEmail.subject} starred={this.state.readEmail.starred}/> : null}
+        {this.state.readEmail ? <ReadHeader emailId={this.state.readEmail._id}/> : null }
+        {this.state.readEmail ? <ReadSubjectStar subject={this.state.readEmail.subject} starred={this.state.readEmail.starred}/> : null}
         <hr />
         {this.state.readEmail ? <ReadMiddle 
                                   proPic={this.state.readEmail.profilePic} 

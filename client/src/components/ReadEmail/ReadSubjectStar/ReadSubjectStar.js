@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import classes from './SubjectStar';
 import {Grid, Row, Col} from 'react-bootstrap';
 
-class SubjectStar extends Component {
+class ReadSubjectStar extends Component {
 
 
   render() {
@@ -31,4 +30,4 @@ class SubjectStar extends Component {
   }
 }
 
-export default SubjectStar;
+export default ReadSubjectStar;

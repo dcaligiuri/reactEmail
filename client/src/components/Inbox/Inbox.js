@@ -14,16 +14,16 @@ class Inbox extends Component {
 
   translateStringToQuery(str){
       if (str === 'Inbox'){
-        return {"trash": false};
+        return {"trash": false, "to": "bart@mail.com"};
       }
       else if (str === 'Starred'){
-        return {"starred": true};
+        return {"trash": false, "starred": true, "to": "bart@mail.com"};
       }
       else if (str === 'Trash'){
-        return {"trash": true};
+        return {"trash": true, "to": "bart@mail.com"};
       }
       else if (str === 'Sent'){
-        return {"sent": true};
+        return {"trash": false, "sender": "bart@mail.com"};
       }
       else
         return null;
@@ -54,11 +54,12 @@ class Inbox extends Component {
 
 
   render() {
-
+    
     return (
       <div>
         {(this.state.emails && this.state.loading === false) ? this.state.emails.map( 
-          em => <Email key={em._id} sender={em.sender} 
+          em => <Email key={em._id} 
+                       sender={em.sender}
                        subject={em.subject} 
                        body={em.body}
                        starred={em.starred}

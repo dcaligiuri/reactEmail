@@ -5,7 +5,8 @@ import EmailLeft from './EmailLeft/EmailLeft';
 import EmailMiddle from './EmailMiddle/EmailMiddle';
 import EmailRight from './EmailRight/EmailRight';
 import { withRouter } from 'react-router-dom'
-import classes from './Email.css';
+
+//import classes from './Email.css';
 
 class Email extends Component {
 
