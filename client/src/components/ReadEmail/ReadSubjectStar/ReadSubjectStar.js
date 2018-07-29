@@ -8,7 +8,10 @@ class ReadSubjectStar extends Component {
 
     return (
         <Grid>
-            <Row>
+            <Row 
+                style={{borderLeft: '1px solid grey', 
+                        borderRight: '1px solid grey',
+                        borderBottom: '1px solid grey'}}>
                 <Col xs={10}>
                     {this.props.subject}
                 </Col>

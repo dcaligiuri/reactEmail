@@ -5,8 +5,8 @@ import EmailLeft from './EmailLeft/EmailLeft';
 import EmailMiddle from './EmailMiddle/EmailMiddle';
 import EmailRight from './EmailRight/EmailRight';
 import { withRouter } from 'react-router-dom'
+import classes from './Email.css'
 
-//import classes from './Email.css';
 
 class Email extends Component {
 
@@ -29,27 +29,26 @@ class Email extends Component {
 
     return (
         <Grid>
-          <Row onClick={(event) => this.readEmail(this.props.id, event)}>
-            <Col xs={2}>
+          <Row className={classes.Email} onClick={(event) => this.readEmail(this.props.id, event)}>
+            <Col xs={2} lg={1}>
               <EmailLeft 
                 proPic={this.props.proPic}
                 altText={this.props.sender}/>
             </Col>
-            <Col xs={8} >
+            <Col xs={8} lg={10}>
               <EmailMiddle
                 read={this.props.read}
                 sender={this.props.sender} 
                 subject={this.props.subject}
                 body={this.props.body}/>
             </Col>
-            <Col xs={2}>
+            <Col xs={2} lg={1}>
               <EmailRight 
                 id={this.props.id}
                 dateSent={this.props.dateSent}
                 starred={this.props.starred}
                 read={this.props.read}/>
             </Col>
-            <hr />
           </Row>
         </Grid>
      

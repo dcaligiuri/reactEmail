@@ -16,3 +16,11 @@
 .InboxBackground {
   background-color: #db3236;
 }
+
+
+
+@media (min-width: 500px){
+  .Hamburger{
+      display: none;
+  }
+}

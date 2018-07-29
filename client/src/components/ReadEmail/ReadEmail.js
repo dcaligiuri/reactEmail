@@ -30,7 +30,6 @@ class ReadEmail extends Component {
                                   emailId={this.state.readEmail._id} 
                                   subject={this.state.readEmail.subject}
                                   starred={this.state.readEmail.starred}/> : null}
-        <hr />
         {this.state.readEmail ? <ReadMiddle 
                                   proPic={this.state.readEmail.profilePic} 
                                   sender={this.state.readEmail.sender}
@@ -38,10 +37,6 @@ class ReadEmail extends Component {
                                   altText={this.state.readEmail.sender} /> : null}   
         {this.state.readEmail ? <ReadEmailBody
                                   body={this.state.readEmail.body}/> : null}   
-        
-                                  
-        
-        <hr />
       </div>
     ); 
   }

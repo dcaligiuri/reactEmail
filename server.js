@@ -6,7 +6,10 @@ var url = "mongodb://heroku_gcqllm80:38ek24skubgto7pkei0g8d9oe7@ds153851.mlab.co
 var ObjectId = require('mongoose').Types.ObjectId; 
 
 
+
 const app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -25,13 +28,17 @@ function toBool(string){
 app.get('/api/inbox/:query', (req, res) => {
 
   const query = JSON.parse(req.params.query);
+
+
   
-  MongoClient.connect(url, function(err, db) {
+  MongoClient.connect(url,  function(err, db) {
+
     if (err) throw err;
     var dbo = db.db("heroku_gcqllm80");
 
     dbo.collection("emails").find(query).toArray(function(err, emails) {
       if (err) throw err;
+
       res.json(emails.reverse());
       db.close();
       });

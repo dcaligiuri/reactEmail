@@ -15,7 +15,7 @@ class ReadHeader extends Component {
                         <BackBtn style={{color:'white', marginTop:'22.625px', marginBottom:'22.625px'}} />
                     </Col>
                     <Col xs={8} >
-                        {/*}empty columns{*/}
+                        {/*}empty column{*/}
                     </Col>
                     <Col xs={1} >
                         <TrashBtn emailId={this.props.emailId}/>

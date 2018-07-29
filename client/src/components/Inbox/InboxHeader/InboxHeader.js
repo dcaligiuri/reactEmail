@@ -17,20 +17,21 @@ class InboxHeader extends Component {
         return (
                 <Grid>
                     <Row className={classes.InboxBackground}>
-                        <Col xs={2}>
+                        <Col xs={2} lg={1}>
                             <FontAwesomeIcon 
                                 onClick={this.HamburgerClickHandler} 
                                 className={classes.Hamburger} 
                                 icon={faBars} />
                         </Col>
-                        <Col xs={8} >
+                        <Col xs={8} lg={10}>
                             <h3 className={classes.InboxHeader}>{this.props.header}</h3>
                         </Col>
-                        <Col xs={2} >
+                        <Col xs={2} lg={1}>
                             <FontAwesomeIcon style={{display: 'none'}} className={classes.Hamburger} icon={faSearch} />
                         </Col>
                     </Row>
                 </Grid>
+            
     );
   }
 }

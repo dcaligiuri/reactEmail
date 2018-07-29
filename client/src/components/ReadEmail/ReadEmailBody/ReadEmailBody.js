@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class ReadEmailBody extends Component {
 
@@ -8,7 +8,10 @@ class ReadEmailBody extends Component {
 
     return (
         <Grid>
-          <Row className="show-grid">
+          <Row 
+            style={{borderLeft: '1px solid grey', 
+                    borderRight: '1px solid grey',
+                    borderBottom: '1px solid grey'}}>
             <Col xs={12}>
               {this.props.body ? this.props.body : null }
             </Col>
