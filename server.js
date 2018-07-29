@@ -82,9 +82,9 @@ app.post('/api/compose', (req, res) => {
 
   const d = new Date();
   const month = monthNames[d.getMonth()];
-  const day = d.getDay();
+  const day = d.getDate();
   const dateStr = month + " " + day;
- 
+  
   let emailComposed = {"sender": "bart@mail.com", "to": req.headers.email, "subject": req.headers.subject, "body": req.headers.content,
                        "starred": false, dateSent: dateStr , "read": false, "trash": false, 
                        "profilePic": "https://officialpsds.com/imageview/r6/v0/r6v0v1_large.png?1521316506" };
