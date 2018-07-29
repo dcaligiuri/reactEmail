@@ -29,29 +29,29 @@ class Email extends Component {
 
     return (
         <Grid>
-        <Row onClick={(event) => this.readEmail(this.props.id, event)}>
-          <Col xs={2}>
-           <EmailLeft 
-            proPic={this.props.proPic}
-            altText={this.props.sender}/>
-          </Col>
-          <Col xs={8} >
-            <EmailMiddle
-              read={this.props.read}
-              sender={this.props.sender} 
-              subject={this.props.subject}
-              body={this.props.body}/>
-          </Col>
-          <Col xs={2}>
-           <EmailRight 
-              id={this.props.id}
-              dateSent={this.props.dateSent}
-              starred={this.props.starred}
-              read={this.props.read}/>
-          </Col>
-          <hr />
-        </Row>
-      </Grid>
+          <Row onClick={(event) => this.readEmail(this.props.id, event)}>
+            <Col xs={2}>
+              <EmailLeft 
+                proPic={this.props.proPic}
+                altText={this.props.sender}/>
+            </Col>
+            <Col xs={8} >
+              <EmailMiddle
+                read={this.props.read}
+                sender={this.props.sender} 
+                subject={this.props.subject}
+                body={this.props.body}/>
+            </Col>
+            <Col xs={2}>
+              <EmailRight 
+                id={this.props.id}
+                dateSent={this.props.dateSent}
+                starred={this.props.starred}
+                read={this.props.read}/>
+            </Col>
+            <hr />
+          </Row>
+        </Grid>
      
     );
   }

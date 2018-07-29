@@ -7,9 +7,6 @@ var ObjectId = require('mongoose').Types.ObjectId;
 
 
 const app = express();
-var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
-
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];

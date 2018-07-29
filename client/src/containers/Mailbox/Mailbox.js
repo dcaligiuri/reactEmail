@@ -3,15 +3,12 @@ import InboxHeader from '../../components/Inbox/InboxHeader/InboxHeader';
 import Inbox from '../../components/Inbox/Inbox';
 import ComposeBtn from '../../components/UI/Navigation/ComposeBtn/ComposeBtn';
 import SideDrawer from '../../components/UI/Navigation/SideDrawer/SideDrawer';
-import classes from './Mailbox.css';
 
 class Mailbox extends Component {
-  
-  
   state = {
     showSideDrawer: false,
     display: 'Inbox'
-  } 
+  }
 
   sideDrawerToggleHandler = (status) => {
     this.setState({showSideDrawer: !status});
@@ -34,7 +31,7 @@ class Mailbox extends Component {
 
   render() {
     return (
-      <div className={classes.Mailbox}>
+      <div>
           <SideDrawer 
             closed={this.sideDrawerClosedHandler}
             open={this.state.showSideDrawer}
